@@ -16,6 +16,7 @@ namespace DailyCode;
     }
     }
 
+//        Console.WriteLine("[{0}]", string.Join(",",TwoSumProb.TwoSum(nums, target)));
   // Test case 1 
         //int[] nums = new int[]{2,7,11,15}; target = 9
         //Test case 2
@@ -55,3 +56,7 @@ namespace DailyCode;
  
 
 // Follow-up: Can you come up with an algorithm that is less than O(n2) time complexity?
+
+
+// TC = 134ms 66.26%
+// SC = 47.49 MB 28.21%
