@@ -2,31 +2,25 @@ static class ValidateSubSequence
 {
     public static bool ValidateSubSequenceFunction(List<int> array, List<int> sequence)
     {
-        int existCount = 0;
-        var convertedArray = array.ToArray();
-        var sequenceArray = sequence.ToArray();
-      if(convertedArray.Length < sequenceArray.Length)
+       var convertedArray = array.ToArray();
+      var sequenceArray = sequence.ToArray();
+      int offset = 0;
+      int count = 0;
+      if(sequenceArray.Length <= convertedArray.Length)
       {
-        for(int i=0; i< sequenceArray.Length; i++)
-        {
-            bool valueExists = false;
-            for(int j=0;j< convertedArray.Length; j++)
-            {
-                if (sequence[i] == array[j])
-                {
-                        existCount++;
-                        valueExists = true;
-                        break;
-                }
-            }
-            if(!valueExists)
-            {
-                return false;
-            }
-
-        }
-        return existCount == sequenceArray.Length;
+      for(int i=0;i<sequenceArray.Length; i++)
+      {
+          for(int j=offset; j<convertedArray.Length; j++)
+          {
+              if(sequenceArray[i] == convertedArray[j])
+              {
+                  offset = offset< convertedArray.Length -1 ? j+1: j;
+                  count++;
+                  break;
+              }
+          }
+      }
     }
-    return false;
-    }
+    return sequenceArray.Length == count;
+}
 }
