@@ -3,6 +3,7 @@ namespace DailyCode;
     {
     public static int[] TwoSum(int[] nums, int target)
     {
+        //O(n)2 with O(1)
         for(int i=0; i< nums.Length -1 ; i++)
         {
         for(int j=i+1; j<nums.Length;j++)
@@ -17,6 +18,7 @@ namespace DailyCode;
 
 
   public static int[] TwoNumberSumOptimized(int[] array, int targetSum) {
+    //O(nlogn) with O(1)
     Array.Sort(array);
     int minPointer = 0;
     int maxPointer = array.Length-1;
@@ -33,6 +35,22 @@ namespace DailyCode;
         }
     return new int[0];
   }
+
+public class TwoNumberOrderN {
+  public static int[] TwoNumberSum(int[] array, int targetSum) {
+    HashSet<int> nums = new HashSet<int>();
+    foreach(int num in array)
+    {
+        var potentialValue = targetSum - num;
+        if(nums.Contains(potentialValue))
+            return new int[] {potentialValue, num};
+        else
+            nums.Add(num);
+    }
+    return new int[0];
+  }
+}
+
 
     }
 
