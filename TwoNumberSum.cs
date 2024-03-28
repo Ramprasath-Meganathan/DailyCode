@@ -16,7 +16,7 @@ namespace DailyCode;
     }
 
 
-  public static int[] TwoNumberSum(int[] array, int targetSum) {
+  public static int[] TwoNumberSumOptimized(int[] array, int targetSum) {
     Array.Sort(array);
     int minPointer = 0;
     int maxPointer = array.Length-1;
