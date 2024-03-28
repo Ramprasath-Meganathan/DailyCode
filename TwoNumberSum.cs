@@ -14,7 +14,28 @@ namespace DailyCode;
         }
         return [];
     }
+
+
+  public static int[] TwoNumberSum(int[] array, int targetSum) {
+    Array.Sort(array);
+    int minPointer = 0;
+    int maxPointer = array.Length-1;
+    while(minPointer<maxPointer)
+        {
+        var computedValue = array[minPointer]+array[maxPointer];
+        if(computedValue == targetSum)
+            return new int[2]{array[minPointer],array[maxPointer]};
+        else if(computedValue<targetSum)
+            minPointer++;
+        else
+            maxPointer --;
+        continue;
+        }
+    return new int[0];
+  }
+
     }
+
 
 //        Console.WriteLine("[{0}]", string.Join(",",TwoSumProb.TwoSum(nums, target)));
   // Test case 1 
