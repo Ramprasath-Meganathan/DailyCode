@@ -4,6 +4,8 @@ public class ClosestValueInTree {
   public static int FindClosestValueInBst(BST tree, int target) {
       return FindClosestValueInBst(tree,target,tree.value);
       }
+      //O(logn()) time and O(1) space - average
+      //O(n) time and O(1) space - worst
  public static int FindClosestValueInBst(BST tree, int target, int closest)
     {
     var currentNode = tree;
