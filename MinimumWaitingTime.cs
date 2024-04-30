@@ -4,15 +4,28 @@ using System;
 public class MinimumWaitingTime {
 //O(n2) O(n) space
   public int MinimumWaitingTimeMethod(int[] queries) {
-    Array.Sort(queries);
+ Array.Sort(queries);
     int length = queries.Length;
-    int[] individualWaitTime = new int[length];
     if(length==1)
         return 0;
-    individualWaitTime[0] = 0;
+    int minimumWaitingTime = 0;
     for(int i=1;i<length;i++)
-        individualWaitTime[i]= individualWaitTime[i-1]+queries[i-1];
-    return individualWaitTime.Sum();
+        minimumWaitingTime += queries[i-1];
+    minimumWaitingTime+=queries[length-1];
+    return minimumWaitingTime;
+  }
+
+  // O(n) time and O(1) space
+  public int MinimumWaitingTimeOptimized(int[] queries) {
+    Array.Sort(queries);
+    int totalWaitingTime = 0;
+    for(int i=0;i<queries.Length;i++)
+    {
+        int duration = queries[i];
+        int queriesLeft = queries.Length - (i+1);
+        totalWaitingTime+=duration*queriesLeft;
+    }
+    return totalWaitingTime;
   }
 }
 
