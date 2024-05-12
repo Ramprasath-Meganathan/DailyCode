@@ -2,7 +2,7 @@ using System;
 
 public class ArrayOfProducts {
     //O(n2) and O(n) space
-  public int[] ArrayOfProductsMethod(int[] array) {
+  public int[] ArrayOfProductsSolution1(int[] array) {
     int pointer=0;
     int[] productArray = new int[array.Length];
     while(pointer<array.Length)
@@ -21,6 +21,25 @@ public class ArrayOfProducts {
     pointer++;
     }
     return productArray;
+  }
+
+//O(n) tiem and O(n) space
+   public int[] ArrayOfProductsSolution2(int[] array) {
+    int[] products = new int[array.Length];
+
+    int leftRunningProduct =1;
+    for(int i=0;i<array.Length;i++)
+    {
+        products[i] = leftRunningProduct;
+        leftRunningProduct*=array[i];
+    }
+    int rightRunningProduct=1;
+    for(int i=array.Length-1;i>=0;i--)
+    {
+        products[i]*=rightRunningProduct;
+        rightRunningProduct*=array[i];
+    }
+    return products;
   }
 }
 
