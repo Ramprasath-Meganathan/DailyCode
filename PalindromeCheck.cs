@@ -1,5 +1,6 @@
 using System;
 using System.Text;
+using System.Text.RegularExpressions;
 
 public class PalindromeCheck {
 
@@ -19,4 +20,15 @@ public class PalindromeCheck {
         reversedString.Append(str[i]);
     return str.Equals(reversedString.ToString());
   }
+      public static bool IsPalindromeWithAlphaNumericRemoval(string s) {
+       var reversedString =s;
+       var str =  RemoveAlphaNumeric(reversedString).ToCharArray();
+       Array.Reverse(str);
+       return new string(str).Equals(RemoveAlphaNumeric(s));
+    }
+
+    public static string RemoveAlphaNumeric(string s)
+    {
+     return Regex.Replace(s.ToLower(),"[^0-9A-Za-z]","");
+    }
 }
