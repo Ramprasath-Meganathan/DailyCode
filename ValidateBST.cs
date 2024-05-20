@@ -1,5 +1,6 @@
 using System;
 
+// O(n) time and O(d) space
 public class ValidateBST {
      public static bool ValidateBst(BST tree) {
          return ValidateBst(tree, Int32.MinValue, Int32.MaxValue);
