@@ -9,7 +9,9 @@
  *     }
  * }
  */
-public class Solution {
+
+//yet to finish
+public class AddTwoNumbersLinkedList {
     ListNode resultNode = new ListNode();
     public ListNode AddTwoNumbers(ListNode l1, ListNode l2) {
         if(l1!=null&&l2!=null)
