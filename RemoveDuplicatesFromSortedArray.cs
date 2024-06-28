@@ -4,25 +4,15 @@ static class RemoveDuplicatesFromSortedArray
     {
         public static int RemoveDuplicatesFromSortedArrayFn(int[] nums)
         {
-            HashSet<int> result = [];
-            var dupes = 0;
-            for(int i=0;i<nums.Length; i++)
+              int count= 1;
+            for(int i=0;i<nums.Length-1; i++)
             {
-                if(result.Count == 0)
+                if(nums[i] != nums[i+1])
                 {
-                    result.Add(nums[i]);
-                    continue;
+                    count++;
+                    nums[count] = nums[i];
                 }
-                else if(result.Contains(nums[i]))
-                {
-                    dupes++;
-                    continue;
-                }
-                result.Add(nums[i]);
             }
-            for(int j=result.Count; j<= nums.Length; j++)
-                result.Add(-101);
-            nums = [.. result];
-            return nums.Length;
+         return count;
         }
     }
