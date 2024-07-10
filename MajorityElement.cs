@@ -1,7 +1,7 @@
 public class MajorityElement {
 
-    // O(n)
-    public int MajorityElementMethod(int[] nums) {
+    // O(n) time and space
+    public int MajorityElementSolution1(int[] nums) {
         Dictionary<int,int> counter = new Dictionary<int,int>();
         for(int i=0;i<nums.Length;i++)
         {
@@ -11,6 +11,26 @@ public class MajorityElement {
                 counter[nums[i]] = 1;
         }
         return counter.MaxBy(x=>x.Value).Key;
+    }
+
+    // O(n) time and O(1) space
+    public int MajorityElementSolution2(int[] nums) {
+      int majority = nums[0];
+      int counter = 1, i = 1;
+      int length = nums.Length;
+      for(i = 1; i < length; i++)
+      {
+        if(nums[i]==majority)
+            counter++;
+        else
+            counter--;
+        if(counter==0)
+        {
+            majority = nums[i];
+            counter = 1;
+        }
+      }
+      return majority;
     }
 }
 
