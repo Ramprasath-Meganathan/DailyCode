@@ -50,7 +50,7 @@ public class FindSuccessorInBinaryTree {
     }
 }
 
-// O(h) time and O(1) space
+// O(h) time and O(1) space where h is the height of the tree
 public class FindSuccessorSolution2 {
   // This is an input class. Do not edit.
   public class BinaryTree {
