@@ -3,6 +3,7 @@ using System;
 using System.Linq;
 
 public class TournamentWinnerWithoutLinq {
+  // O(n) time and O(n) space
   public string TournamentWinner(
     List<List<string> > competitions, List<int> results
   ) {
