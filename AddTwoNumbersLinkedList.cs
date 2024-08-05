@@ -8,8 +8,7 @@
         this.next = next;
     }
  }
-
-
+ 
 //yet to finish
 public class AddTwoNumbersLinkedList {
     ListNode resultNode = new ListNode();
