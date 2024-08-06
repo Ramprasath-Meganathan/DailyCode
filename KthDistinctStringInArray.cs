@@ -1,5 +1,6 @@
 
 using System.Collections.Generic;   
+// O(n) time
 public class KthDistinctStringInArray {
     public string KthDistinct(string[] arr, int k) {
         Dictionary<string,int> counterDict = new Dictionary<string, int>();
