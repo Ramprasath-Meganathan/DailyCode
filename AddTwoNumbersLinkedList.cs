@@ -9,24 +9,42 @@
     }
  }
  
-//yet to finish
+// O(n) time and O(n) space
 public class AddTwoNumbersLinkedList {
-    ListNode resultNode = new ListNode();
+   /**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     public int val;
+ *     public ListNode next;
+ *     public ListNode(int val=0, ListNode next=null) {
+ *         this.val = val;
+ *         this.next = next;
+ *     }
+ * }
+ */
     public ListNode AddTwoNumbers(ListNode l1, ListNode l2) {
-        if(l1!=null&&l2!=null)
+        ListNode sentinel = new ListNode(0);
+        ListNode l1Current = l1;
+        ListNode l2Current = l2;
+        ListNode current = sentinel;
+        int carry = 0;
+        while(l1Current != null || l2Current != null)
         {
-            resultNode.val = l1.val+l2.val;
-            if(resultNode.val/10>0)
-                
-            if(l1.next!=null&&l2.next!=null)
-                resultNode.next = AddTwoNumbers(l1.next,l2.next);
-            else
-            {
-                resultNode.next = null;
-                return resultNode;
-            }
+            int value1 = (l1Current != null) ? l1Current.val : 0;
+            int value2 = (l2Current != null) ? l2Current.val : 0;
+            int sum = carry + value1 + value2;
+            carry = sum/10;
+            current.next = new ListNode(sum%10);
+            current = current.next;
+            if(l1Current != null) 
+                l1Current = l1Current.next;
+            if(l2Current != null)
+                l2Current = l2Current.next; 
         }
-        return resultNode;
+
+        if(carry > 0)
+            current.next = new ListNode(carry);
+        return sentinel.next;
     }
 }
 
