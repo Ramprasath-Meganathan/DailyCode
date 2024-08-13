@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class MergeOverlappingIntervals {
     //O(nlogn) time and O(n) space where n is the length of the input array
-  public int[][] MergeOverlappingIntervals(int[][] intervals) {
+  public int[][] MergeOverlappingIntervalsMethod(int[][] intervals) {
     int[][] sortedIntervals = intervals.Clone() as int[][];
     Array.Sort(sortedIntervals, (a,b)=> a[0].CompareTo(b[0]));
 
@@ -31,17 +31,17 @@ public class MergeOverlappingIntervals {
 
 
 
-  Write a function that takes in a non-empty array of arbitrary intervals,
-  merges any overlapping intervals, and returns the new intervals in no
-  particular order.
+//   Write a function that takes in a non-empty array of arbitrary intervals,
+//   merges any overlapping intervals, and returns the new intervals in no
+//   particular order.
 
-Each Interval interval is an array of two integers, with interval[0] 
-at the start of the interval and interval[i] as the end of the interval
+// Each Interval interval is an array of two integers, with interval[0] 
+// at the start of the interval and interval[i] as the end of the interval
 
-Note that back-to-back intervals aren't considered to be overlapping. For example,m [1,5] and [6,7]
-aren't overlapping; however, [1,6] and [6,7] are indeed overlapping.
+// Note that back-to-back intervals aren't considered to be overlapping. For example,m [1,5] and [6,7]
+// aren't overlapping; however, [1,6] and [6,7] are indeed overlapping.
 
-Also note that the start of any particular interval will always be less than or eqia; TimeProvider the end of the interval
+// Also note that the start of any particular interval will always be less than or eqia; TimeProvider the end of the interval
 
 // Yay, your code passed all the test cases!
 
