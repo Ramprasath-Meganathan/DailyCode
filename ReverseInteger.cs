@@ -1,9 +1,11 @@
+// O(n) time and O(1) space
 public class ReverseInteger {
     public int Reverse(int x) {
         var reverse = string.Join("", Math.Abs(x).ToString().Reverse());
         return int.Parse(reverse) * Math.Sign(x);
     }
 
+// O(n) time and O(1) space
 public int ReverseIntegerSoln2(int x) {
     long reversed = 0;
     int sign = x < 0 ? -1 : 1;
