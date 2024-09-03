@@ -1,18 +1,10 @@
-/**
- * Definition for singly-linked list.
- * public class ListNode {
- *     public int val;
- *     public ListNode next;
- *     public ListNode(int val=0, ListNode next=null) {
- *         this.val = val;
- *         this.next = next;
- *     }
- * }
- */
+//Definition for singly-linked list.
+
+
 
  // O(n) time and O(1) space
-public class RemoveDuplicatesInLinkedList {
-    public ListNode DeleteDuplicates(ListNode head) {
+public static class RemoveDuplicatesInLinkedList {
+    public static ListNode DeleteDuplicates(ListNode head) {
         ListNode current = head;
         while(current != null)
         {
@@ -22,6 +14,14 @@ public class RemoveDuplicatesInLinkedList {
         }
         return head;
     }
+    public class ListNode {
+    public int val;
+   public ListNode next;
+   public ListNode(int val=0, ListNode next=null) {
+        this.val = val;
+        this.next = next;
+    }
+ }
 }
 
 
