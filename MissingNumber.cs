@@ -1,14 +1,17 @@
 
 // O(n) time and O(n) space
 public class MissingNumberProblem {
-    public int MissingNumber(int[] nums) {
-        List<int> sortedNums = nums.ToList();
-        sortedNums.Sort();
-        if(sortedNums.Max()<sortedNums.Count)
-            return sortedNums.Count;
-        for(int i = 0;i<=sortedNums.Max();i++)
+
+// O(nlogn) time and O(1) space
+ public int MissingNumber(int[] nums) {
+        Array.Sort(nums);
+        int lastElement = nums.Max();
+        int length = nums.Length;
+        if(lastElement< length)
+            return length;
+        for(int i = 0;i <= lastElement;i++)
         {
-            if(i!=sortedNums[i])
+            if(i!=nums[i])
                 return i;
         }
         return 0;
