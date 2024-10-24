@@ -1,7 +1,5 @@
 //Definition for singly-linked list.
 
-
-
  // O(n) time and O(1) space
 public static class RemoveDuplicatesInLinkedList {
     public static ListNode DeleteDuplicates(ListNode head) {
