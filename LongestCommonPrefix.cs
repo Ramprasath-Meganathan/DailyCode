@@ -1,7 +1,7 @@
 using System.Text;
 
-public class Solution {
-    public string LongestCommonPrefix(string[] strs) {
+public class LongestCommonPrefix {
+    public string LongestCommonPrefixSolution(string[] strs) {
             int n = strs.Length;
             Array.Sort(strs);
             string first = strs[0];
