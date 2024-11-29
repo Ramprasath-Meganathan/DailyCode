@@ -1,0 +1,15 @@
+/Users/ramprasathmeganathan/Documents/GIT/DailyCode/bin/Debug/net8.0/DailyCode
+/Users/ramprasathmeganathan/Documents/GIT/DailyCode/bin/Debug/net8.0/DailyCode.deps.json
+/Users/ramprasathmeganathan/Documents/GIT/DailyCode/bin/Debug/net8.0/DailyCode.runtimeconfig.json
+/Users/ramprasathmeganathan/Documents/GIT/DailyCode/bin/Debug/net8.0/DailyCode.dll
+/Users/ramprasathmeganathan/Documents/GIT/DailyCode/bin/Debug/net8.0/DailyCode.pdb
+/Users/ramprasathmeganathan/Documents/GIT/DailyCode/obj/Debug/net8.0/DailyCode.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ramprasathmeganathan/Documents/GIT/DailyCode/obj/Debug/net8.0/DailyCode.AssemblyInfoInputs.cache
+/Users/ramprasathmeganathan/Documents/GIT/DailyCode/obj/Debug/net8.0/DailyCode.AssemblyInfo.cs
+/Users/ramprasathmeganathan/Documents/GIT/DailyCode/obj/Debug/net8.0/DailyCode.csproj.CoreCompileInputs.cache
+/Users/ramprasathmeganathan/Documents/GIT/DailyCode/obj/Debug/net8.0/DailyCode.sourcelink.json
+/Users/ramprasathmeganathan/Documents/GIT/DailyCode/obj/Debug/net8.0/DailyCode.dll
+/Users/ramprasathmeganathan/Documents/GIT/DailyCode/obj/Debug/net8.0/refint/DailyCode.dll
+/Users/ramprasathmeganathan/Documents/GIT/DailyCode/obj/Debug/net8.0/DailyCode.pdb
+/Users/ramprasathmeganathan/Documents/GIT/DailyCode/obj/Debug/net8.0/DailyCode.genruntimeconfig.cache
+/Users/ramprasathmeganathan/Documents/GIT/DailyCode/obj/Debug/net8.0/ref/DailyCode.dll
