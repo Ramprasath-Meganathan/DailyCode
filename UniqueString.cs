@@ -51,3 +51,6 @@ public static class UniqueString {
 
 
 // Find if string has unique characters
+
+// Testcase         string input = "abbcd";
+// input = "abcd"
