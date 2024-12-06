@@ -7,6 +7,8 @@ using System.Linq;
 
 // solution 1
 public static class UniqueString {
+
+    // abcd
     public static bool FindUniqueString(string s) {
         Dictionary<char,int> uniqueCounter = new Dictionary<char,int>();
         for(int i = 0; i< s.Length; i++)
