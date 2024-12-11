@@ -15,8 +15,20 @@ public class PalindromeChecker
         return true;
     }
 
+    private Dictionary<char, int> GetCharCounter(string s)
+    {
+        var keyValuePairs = new Dictionary<char, int>();
+        for (int i = 0; i < s.Length; i++)
+        {
+            if (keyValuePairs.ContainsKey(s[i]))
+                keyValuePairs[s[i]] += 1;
+            else
+                keyValuePairs[s[i]] = 1;
+        }
+        return keyValuePairs;
+    }
 
-    // O(n) time and O(1) space
+      // O(n) time and O(1) space
     public bool PalindromeChekerInMemory(string s)
     {
         int start = 0; int end = s.Length -1 ;
@@ -30,16 +42,4 @@ public class PalindromeChecker
         return true;
     }
 
-    private Dictionary<char, int> GetCharCounter(string s)
-    {
-        var keyValuePairs = new Dictionary<char, int>();
-        for (int i = 0; i < s.Length; i++)
-        {
-            if (keyValuePairs.ContainsKey(s[i]))
-                keyValuePairs[s[i]] += 1;
-            else
-                keyValuePairs[s[i]] = 1;
-        }
-        return keyValuePairs;
-    }
 }

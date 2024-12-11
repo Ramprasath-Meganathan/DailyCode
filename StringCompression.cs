@@ -1,8 +1,10 @@
- 
- // O(n) time and O(1) space
- public class StringCompression
+
+// O(n) time and O(1) space
+using System.Reflection.PortableExecutable;
+
+public abstract class StringCompression
     {
-        public int Compress(char[] chars)
+        public virtual int Compress(char[] chars)
         {
             if (chars.Length <= 1)
             {
@@ -52,6 +54,9 @@
             return currItem;
         }
     }
+
+
+    
 
 // problem statement
 //     Given an array of characters chars, compress it using the following algorithm:
