@@ -1,3 +1,5 @@
+using Microsoft.VisualBasic.FileIO;
+
 public class LinkedListCRUD
 {
     public Node AppendNodeToTail(Node linkedList, int d)
@@ -14,7 +16,7 @@ public class LinkedListCRUD
             }
             head = head.Next;
         }
-        return head;
+        return linkedList;
     }
 
     public Node CreateLinkedList(int[] array)
@@ -44,6 +46,25 @@ public class LinkedListCRUD
             Console.Write(linkedList.data);
             linkedList = linkedList.Next;
         }
+    }
 
+    public Node DeleteLinkedListNode(Node list, int d)
+    {
+      Node previous = null;
+      Node current = list;
+      while(current.Next != null)
+      {
+        if(current.data != d)
+        {
+            previous = current;
+        }
+        else
+        {
+            previous.Next = current.Next;
+            return list;
+        }
+        current = current.Next;
+      }
+      return list;
     }
 }
