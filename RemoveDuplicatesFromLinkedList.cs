@@ -28,6 +28,11 @@ public class RemoveDuplicatesFromLinkedList {
         previous.next = null;
     return linkedList;
   }
+
+    internal Node RemoveDuplicates(Node list)
+    {
+        throw new NotImplementedException();
+    }
 }
 
 // Problem statement
