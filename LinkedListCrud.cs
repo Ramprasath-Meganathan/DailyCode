@@ -1,5 +1,6 @@
 public class LinkedListCRUD
 {
+    // O(n) time and O(1) space
     public Node AppendNodeToTail(Node linkedList, int d)
     {
         Node head = linkedList;
