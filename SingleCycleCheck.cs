@@ -23,7 +23,6 @@ public class SingleCycleCheck {
 }
 
 // Problem statement
-
 //   You're given an array of integers where each integer represents a jump of its
 //   value in the array. For instance, the integer 2 represents a jump
 //   of two indices forward in the array; the integer 3 represents a
