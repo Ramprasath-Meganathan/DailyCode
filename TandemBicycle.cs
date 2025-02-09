@@ -18,7 +18,6 @@ public class TandemBicycle {
 }
 
 //Problem statement
-
 //   A tandem bicycle is a bicycle that's operated by two people: person A and
 //   person B. Both people pedal the bicycle, but the person that pedals faster
 //   dictates the speed of the bicycle. So if person A pedals at a speed of 5
