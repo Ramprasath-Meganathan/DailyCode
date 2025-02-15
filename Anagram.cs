@@ -57,6 +57,26 @@
             return aCounter;
         }
     }
+ 
+     // O(n) time and O(1) space
+        public class Solution {
+          
+        public bool IsAnagram(string s, string t) {
+            if(s.Length != t.Length)
+                return false;
+            var charCount = new int[256];
+            foreach(var c in s)
+                charCount[c]++;
+            foreach(var c in t)
+            {
+                charCount[c]--;
+                if(charCount[c]<0)
+                    return false;
+            }
+            return true;
+            
+        }
+    }
 
 //     problem statement
 
