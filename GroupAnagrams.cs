@@ -1,3 +1,5 @@
+using System.Text;
+
 public class GroupAnagrams {
     
     // O(N∗MLogM) time and O(N*M) space
@@ -20,6 +22,40 @@ public class GroupAnagrams {
         // Return the values of the dictionary as the final grouped anagrams
         return new List<IList<string>>(anagramDict.Values);
     }
+
+     public IList<IList<string>> GroupAnagramsOptimized(string[] strs) {
+      var dict = new Dictionary<string, List<string>>();
+      foreach(var str in strs)
+      {
+        var freqCounter = GetFreqCounter(str);
+        if(!dict.ContainsKey(freqCounter))
+        {
+            dict[freqCounter]= new List<string>();
+        }
+        dict[freqCounter].Add(str);
+      }
+      return new List<IList<string>>(dict.Values);
+
+}
+
+private string GetFreqCounter(string str)
+{
+    int[] charCount = new int[26];
+    foreach(var c in str)
+    {
+        charCount[c-'a']++;
+    }
+    StringBuilder charCountedString = new StringBuilder();
+    for(int i = 0; i<26;i++)
+    {
+        if(charCount[i]>0)
+        {
+            charCountedString.Append((char)(i-'a'));
+            charCountedString.Append(charCount[i]);
+        }
+    }
+    return charCountedString.ToString();
+}
 }
 
 // 49. Group Anagrams
