@@ -1,6 +1,6 @@
 public class ProductOfArrayExceptSelf {
 
-    // O(n) time and O(1) space
+    // O(n) time and O(n) space
     public int[] ProductExceptSelf(int[] nums) {
         int[] productArray = new int[nums.Length];
         productArray[0]  = 1;
@@ -13,6 +13,24 @@ public class ProductOfArrayExceptSelf {
         {
             productArray[i] = productArray[i] * product;
             product *= nums[i];
+        }
+        return productArray;
+    }
+
+    // O(n^2) time and O(n) space
+     public int[] ProductExceptSelfOptimized(int[] nums) {
+       int[] productArray = new int[nums.Length];
+       int product = 1;
+       for(int i = 0; i < nums.Length; i++)
+        {
+          for(int j= 0; j<nums.Length; j++)
+            {
+            if(i==j)
+                continue;
+            product*= nums[j];
+            }
+            productArray[i] = product;
+            product = 1;
         }
         return productArray;
     }
