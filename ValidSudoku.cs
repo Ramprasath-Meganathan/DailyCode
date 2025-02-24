@@ -91,4 +91,34 @@ public class ValidSudoku {
         }
         return true;
     }
+
+    // O(1) time and O(1) space
+    public bool IsValidSudokuOptimized(char[][] board)
+    {
+        HashSet<string>[] rows = new HashSet<string>[9];
+        HashSet<string>[] cols = new HashSet<string>[9];
+        HashSet<string>[] boxes = new HashSet<string>[9];
+        for(int i = 0; i < 9; i++)
+        {
+            rows[i] = new HashSet<string>();
+            cols[i] = new HashSet<string>();
+            boxes[i] = new HashSet<string>();
+        }
+        for(int i = 0; i< 9; i++)
+        {
+            for(int j = 0; j<9; j++)
+            {
+                char c = board[i][j];
+                if(c=='.')
+                    continue;
+                int boxIndex = (i/3)*3 + j/3;
+                if(rows[i].Contains(c) || cols[j].Contains(c) || boxes[boxIndex].Contains(c))
+                    return false;
+                rows[i].Add(c);
+                cols[j].Add(c);
+                boxes[boxIndex].Add(c);
+            }
+        }
+        return true;
+    }
 }
