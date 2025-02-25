@@ -25,6 +25,28 @@ public class TwoSumIISorted {
         }
         return new int[2];
     }
+
+    // O(n^2) time and O(1) space
+    public int[] TwoSumUnOptimized(int[] numbers, int target) {
+        int[] outputArray = new int[2];
+        if(numbers.Length<=1)
+            return outputArray;
+        for(int i = 0; i < numbers.Length-1; i++)
+        {
+            for(int j = i+1; j<numbers.Length; j++)
+            {
+                if(numbers[i]+numbers[j]==target)
+                {
+                    outputArray[0] = i+1;
+                    outputArray[1] = j+1;
+                    break;
+                }
+            }
+        }
+        return outputArray;
+    }
+
+    // see if binary search can be used
 }
 
 // Given a 1-indexed array of integers numbers that is already sorted in non-decreasing order, find two numbers such that they add up to a specific target number. Let these two numbers be numbers[index1] and numbers[index2] where 1 <= index1 < index2 <= numbers.length.
