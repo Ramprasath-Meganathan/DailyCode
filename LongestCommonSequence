@@ -1,0 +1,37 @@
+public class Solution {
+    // O(n)t and O(n)s
+    public int LongestConsecutive(int[] nums) {
+        if(nums == null || nums.Length == 0) // O(1)t and O(1)s
+            return 0; // O(1) 
+        HashSet<int> numsSet = new HashSet<int>(nums); // O(1)t and O(n)s
+        int count = numsSet.Count; // O(1)t and O(1)s
+        int minValue = int.MaxValue , maxValue = int.MinValue; // O(1)
+        foreach(int num in numsSet) // O(n)t and O(1)s
+        {
+            if(num<minValue)
+                minValue = num;
+             if(num>maxValue)
+                maxValue = num;
+        }
+        if((maxValue-minValue+1) == count) // O(1)t and O(1)s
+            return count;
+        int longestStreak = 0;
+        foreach(int num in numsSet) //O(n)t and O(1)s
+        {
+            if(!numsSet.Contains(num-1))
+            {
+            int currentNum = num;
+            int currentStreak = 1;
+
+            while(numsSet.Contains(currentNum+1))
+            {
+                currentNum++;
+                currentStreak++;
+            }
+            longestStreak = Math.Max(longestStreak, currentStreak); // O(1)t and s
+            }
+        }
+        return longestStreak;
+    
+    }
+}
