@@ -1,4 +1,6 @@
 public class BestTimeToBuyAStock {
+
+    // O(n^2) time and O(1) space
      public int MaxProfit(int[] prices) {
     int difference = 0;
     for(int i=0;i<prices.Length-1;i++)
@@ -22,6 +24,22 @@ public class BestTimeToBuyAStock {
     }
     return Math.Abs(difference);
 }
+
+// O(n) time and O(1) space
+    public int MaxProfitOptimized(int[] prices) {
+        int minPrice = int.MaxValue;  // Track the lowest price seen so far
+        int maxProfit = 0;            // Track the maximum profit
+
+        foreach (int price in prices) {
+            if (price < minPrice) {
+                minPrice = price;  // Update minimum price if we find a lower one
+            } else {
+                maxProfit = Math.Max(maxProfit, price - minPrice);  // Check profit
+            }
+        }
+
+        return maxProfit;
+    }
 }
 
 
