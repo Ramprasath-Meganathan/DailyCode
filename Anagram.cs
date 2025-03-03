@@ -76,6 +76,28 @@
             return true;
             
         }
+
+        // O(n) time and O(26) space
+        public bool IsAnagramOptimized(string s, string t) {
+        if(s.Length!=t.Length)
+            return false;
+        int[] freqArray = new int[26];
+        foreach(var c in s)
+            freqArray[c-'a']++;
+        foreach(var c in t)
+            freqArray[c-'a']--;
+        for(int i = 0; i<26;i++)
+        {
+            if(freqArray[i]!=0)
+                return false;
+        }
+        return true;
+    }
+
+       public bool IsAnagramLinq(string s, string t) {
+        //O(nlogn) time and O(n) space
+        return s.Length == t.Length && s.OrderBy(c=>c).SequenceEqual(t.OrderBy(c=>c));
+    }
     }
 
 //     problem statement
