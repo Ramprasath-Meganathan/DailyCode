@@ -1,6 +1,6 @@
 public class TopKFrequentElements {
 
-    // O(n
+    // O(n) time
     public int[] TopKFrequent(int[] nums, int k) {
         var dict = new Dictionary<int, int>();
         foreach(var value in nums)
@@ -55,6 +55,7 @@ public class TopKFrequentElements {
     }
 
     // using priority Queue
+    // O(nlogk) time and O(n) space
     public int[] TopKFrequentOptimized1(int[] nums, int k) {
         var dict = new Dictionary<int, int>();
         foreach(var value in nums)
