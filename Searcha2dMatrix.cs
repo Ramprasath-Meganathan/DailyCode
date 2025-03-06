@@ -3,7 +3,7 @@ public class Search2DMatrix {
     public bool SearchMatrix(int[][] matrix, int target) {
        foreach(var row in matrix)
        {
-        foreach(var num in row)
+        foreach(var num in row) // O(m*n) time
         {
             if(num==target)
                 return true;
