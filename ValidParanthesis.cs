@@ -1,26 +1,23 @@
 public class ValidParanthesis {
+    // O(n) time and O(n) space
     public bool IsValid(string s) {
-        if(s == null || s == string.Empty || s.Length ==1)
-            return false;
-        Dictionary<char,char> paranthesisDict = new Dictionary<char,char>(){
-            {']','['},
-            {'}','{'},
-            {')','('}
-        };
-        Stack<char> stack= new Stack<char>();
-        foreach(var c in s)
+    Stack<char> stack = new Stack<char>(); // O(n) space O(1) time
+    if(s == null || s.Length %2 != 0) // O(1) timespace
+        return false; // O(1) time
+       var paranthesisDict = new Dictionary<char,char>(){{ 
+        ')','('
+       },{'}','{'},{']','['}}; //O(1) space
+       foreach(var c in s) //O(n) time
+       {
+        if(paranthesisDict.ContainsKey(c)) //O(1) time
         {
-            if(paranthesisDict.ContainsKey(c))
-            {
-                if(stack.Count==0||stack.Peek()==paranthesisDict[c])
-                    stack.Pop();
-                else
-                    return false;
-            }
-            else
-                stack.Push(c);
-        }
-        return true;
+        if (stack.Count == 0 || stack.Pop() != paranthesisDict[c]) //O(1) time
+            return false; //O(1) time
+         }
+        else
+            stack.Push(c);//O(n) time
+       }
+       return stack.Count == 0; //O(1) time
         
     }
 }
