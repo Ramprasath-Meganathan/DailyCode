@@ -20,4 +20,13 @@ public class ValidParanthesis {
        return stack.Count == 0; //O(1) time
         
     }
+
+// O(n^2) time and O(1) space
+    public bool IsValidUnOptimized(string s) {
+    if(s==null||s.Length %2!=0)
+        return false;
+    while(s.Contains("()")||s.Contains("[]")||s.Contains("{}"))
+        s = s.Replace("()","").Replace("[]","").Replace("{}","");
+    return s.Length == 0;
+    }
 }
