@@ -14,7 +14,7 @@ public class SplitTheArray
         }
         return !frequencyDict.Values.Any(kv => kv > 2); // O(n) time O(1) space
     }
-        // Time complexity: O(n)
+    // Time complexity: O(n)
     // Space complexity: O(n)
        public bool IsPossibleToSplitWithoutLinq(int[] nums) {
         Dictionary<int, int> frequencyDict = new Dictionary<int, int>();
