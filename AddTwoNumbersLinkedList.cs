@@ -9,7 +9,7 @@
     }
  }
  
-// O(n) time and O(n) space
+// O(m+n) time and O(n) space
 public class AddTwoNumbersLinkedList {
    /**
  * Definition for singly-linked list.
