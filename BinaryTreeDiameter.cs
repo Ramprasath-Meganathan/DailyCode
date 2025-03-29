@@ -20,6 +20,38 @@ public class BinaryTreeDiameter {
      return new TreeInfo(currentDiameter, currentHeight);
   }
 
+  /**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     public int val;
+ *     public TreeNode left;
+ *     public TreeNode right;
+ *     public TreeNode(int val=0, TreeNode left=null, TreeNode right=null) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+public class BinaryTreeDiameter2 {
+  // O(n) time and O(h) space - h is the height of the binary tree
+    int result = 0;
+    public int DiameterOfBinaryTree(TreeNode root) {
+        DFS(root);
+        return result;
+    }
+
+      private int DFS(TreeNode root)
+        {
+            if(root == null)
+                return 0;
+            int left = DFS(root.left);
+            int right = DFS(root.right);
+            result = Math.Max(result,left+right);
+            return 1+Math.Max(left,right);
+        }
+}
+
   public class TreeInfo{
       public int diameter;
       public int height;
