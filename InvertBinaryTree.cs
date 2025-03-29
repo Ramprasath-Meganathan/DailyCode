@@ -25,7 +25,7 @@ public class InvertBinaryTree {
             }
         }
   }
-    //O(n) time and O(d) space 
+    //O(n) time and O(d) space  where d is the depth of the array
    public static void InvertBinaryTreeSolution2(BinaryTree tree) {
     if(tree==null)
         return;
