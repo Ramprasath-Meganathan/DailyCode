@@ -8,7 +8,7 @@ public class Solution {
         int minValue = int.MaxValue , maxValue = int.MinValue; // O(1)
         foreach(int num in numsSet) // O(n)t and O(1)s
         {
-            if(num<minValue)
+            if(num<minValue) // can be done without this part entirely
                 minValue = num;
              if(num>maxValue)
                 maxValue = num;
