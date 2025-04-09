@@ -1,5 +1,5 @@
 class BinarysearchPython:
-    # O(log n) time and O(1) spaceß
+    # O(log n) time and O(1) space
     def search(self, nums: List[int], target: int) -> int:
         min, max = 0, len(nums) -1
         while min<=max:
@@ -11,6 +11,3 @@ class BinarysearchPython:
             else:
                 min = mid+1
         return -1
-
-
-            
