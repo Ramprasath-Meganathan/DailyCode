@@ -18,5 +18,20 @@ class Solution:
                     while l<r and nums[l]==nums[l-1]:
                         l+=1
         return res
+
+# Time complexity: O(n^3)
+# Space complexity: O(1)
+    def threeSum(self, nums: List[int]) -> List[List[int]]:
+        result = set()
+        nums.sort()
+        final = []
+        for i in range(len(nums)):
+            for j in range(i+1,len(nums)):
+                for k in range(j+1,len(nums)):
+                    threeSum = nums[i]+nums[j]+nums[k]
+                    if threeSum == 0:
+                        result.add(tuple(sorted([nums[i],nums[j],nums[k]])))
+        return [list(item) for item in result]
+                        
             
                 
