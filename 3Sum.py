@@ -1,4 +1,5 @@
 class Solution:
+    #O(n) time and O(1) space
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         res = []
         nums.sort()
