@@ -41,6 +41,7 @@ class Solution:
             count+=1
             if count == k:
                 return root
+            return helper(root.right,k)
         return helper(root,k).val
 
 
