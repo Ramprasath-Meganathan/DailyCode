@@ -38,6 +38,15 @@ class Solution:
     def missingNumber(nums):
         n = len(nums)
         return n * (n + 1) // 2 - sum(nums)
+    
+    #O(n) time and O(1) space
+    # using bit manipulation
+    def missingNumber(self, nums: List[int]) -> int:
+        n = len(nums)
+        xorr = n
+        for i in range(n):
+            xorr ^= i^nums[i]
+        return xorr
 
 # O(n) time and O(1) space
 # 268 Missing Number
