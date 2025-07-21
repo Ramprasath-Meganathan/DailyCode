@@ -11,7 +11,22 @@ class solution:
                         product*=nums[j]
                 res.append(product)
             return res
-        
+
+    #O(n) time and O(n) space
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
+        n = len(nums)
+        prefix = [1]*n
+        suffix = [1]*n
+        res = [1]*n
+        product = 1
+        for i in range(1,n):
+            prefix[i] = nums[i-1]*prefix[i-1]
+        for j in range(n-2,-1,-1):
+            suffix[j] = nums[j+1]*suffix[j+1]
+        for i in range(n):
+            res[i] = prefix[i]*suffix[i]
+        return res
+              
         #prefix and suffix solution
     def productExceptSelfPrefix(self, nums: List[int]) -> List[int]:
             n = len(nums)
