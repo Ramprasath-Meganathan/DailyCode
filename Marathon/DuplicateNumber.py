@@ -8,6 +8,26 @@ class Solution:
             nums[index]=nums[index]*-1
         return -1
     
+    #O(n) time and O(1) space
+    #Floyd's Tortoise and Hare (Cycle Detection)
+    #This approach uses the fact that the array can be treated as a linked list where each
+    #element points to the next index, and since there is a duplicate, there will be a cycle.
+    #We use two pointers, one moving twice as fast as the other, to find the intersection point.
+    #Once we find the intersection, we reset one pointer to the start and move both pointers at the same speed until they meet again,
+    #which will be the duplicate
+    def findDuplicate(self, nums: List[int]) -> int:
+       fast,slow = 0,0
+       while True:
+        fast = nums[nums[fast]]
+        slow = nums[slow]
+        if slow == fast:
+            break
+       slow2 = 0
+       while True:
+            slow = nums[slow]
+            slow2 = nums[slow2]
+            if(slow==slow2):
+                return slow
 # 287. Find the Duplicate Number
 # Given an array of integers nums containing n + 1 integers where each integer is in the range [1, n] inclusive.
 
