@@ -14,7 +14,7 @@ class Solution:
         return 0 if min_size == float('inf') else min_size
     
     #Sliding window approach
-        def minSubArrayLen(self, target: int, nums: List[int]) -> int:
+    def minSubArrayLen(self, target: int, nums: List[int]) -> int:
             #O(n) time and O(1) space
             min_size = float('inf') #declaring min_size as maximum value since we are finding minimum
             n = len(nums)
