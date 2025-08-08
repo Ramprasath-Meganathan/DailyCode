@@ -24,7 +24,7 @@ class Solution:
      
      #two pointer solution one pass solution
      #O(n) time and O(1) space
-     def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
+    def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
         dummy = ListNode()
         dummy.next = head
         fast = dummy
