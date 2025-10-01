@@ -21,3 +21,11 @@ class Solution:
         else:
             l = mid+1
       return l
+
+    #O(n) time and O(1) space brute force
+    def searchInsert(self, nums: List[int], target: int) -> int:
+        n = len(nums)
+        for i in range(n):
+            if nums[i]>=target:
+                return i
+        return n
