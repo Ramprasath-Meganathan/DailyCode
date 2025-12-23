@@ -1,1 +1,1 @@
-# DailyCode
+# DailyCode Practice
