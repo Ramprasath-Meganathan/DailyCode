@@ -5,7 +5,7 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    #O(n) time and O(h) space where h is the height of the tree
+    #O(n) time and O(n) space where h is the height of the tree
     def hasPathSum(self, root: Optional[TreeNode], targetSum: int) -> bool:
         if not root:
             return False
