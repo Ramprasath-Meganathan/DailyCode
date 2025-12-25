@@ -1,5 +1,6 @@
 class Solution:
     # O(n2)logn time and O(1) or O(n) space
+    # sorting solution
     def lastStoneWeight(self, stones: List[int]) -> int:
         while len(stones)>1:
             stones.sort()
@@ -7,6 +8,20 @@ class Solution:
             if cur:
                 stones.append(cur)
         return stones[0] if stones else 0
+    
+    #O(nlogn) time and O(n) space
+    #heap solution
+    def lastStoneWeight(self, stones: List[int]) -> int:
+        stones = [-s for s in stones]
+        heapq.heapify(stones)
+
+        while len(stones) > 1:
+            first = heapq.heappop(stones)
+            second = heapq.heappop(stones)
+            if second > first:
+                heapq.heappush(stones, first-second)
+        stones.append(0)
+        return abs(stones[0])
     
 # You are given an array of integers stones where stones[i] represents the weight of the ith stone.
 
