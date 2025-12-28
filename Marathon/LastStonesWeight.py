@@ -10,7 +10,7 @@ class Solution:
         return stones[0] if stones else 0
     
     #O(nlogn) time and O(n) space
-    #heap solution
+    #min-heap solution
     def lastStoneWeight(self, stones: List[int]) -> int:
         stones = [-s for s in stones]
         heapq.heapify(stones)
