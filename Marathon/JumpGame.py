@@ -12,6 +12,29 @@ class Solution:
             return False
         return dfs(0)
     
+    # dynamic programming with memoization (top-down)
+    # O(n2) time and O(n) space
+    def canJump(self, nums: List[int]) -> bool:
+        memo = {}
+
+        def dfs(i):
+            if i in memo:
+                return memo[i]
+            if i == len(nums) - 1:
+                return True
+            if nums[i] == 0:
+                return False
+
+            end = min(len(nums), i + nums[i] + 1)
+            for j in range(i + 1, end):
+                if dfs(j):
+                    memo[i] = True
+                    return True
+            memo[i] = False
+            return False
+
+        return dfs(0)
+    
 #     You are given an integer array nums where each element nums[i] indicates your maximum jump length at that position.
 
 # Return true if you can reach the last index starting from index 0, or false otherwise.
