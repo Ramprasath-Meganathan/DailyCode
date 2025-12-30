@@ -35,6 +35,22 @@ class Solution:
 
         return dfs(0)
     
+    # dynamic programming (bottom-up)
+    # O(n2) time and O(n) space
+    def canJump(self, nums: List[int]) -> bool:
+        n =len(nums)
+        dp = [False] * n
+        dp[-1] = True
+
+        for i in range(n-2, -1, -1):
+            end = min(n, i+nums[i]+1)
+            for j in range(i+1, end):
+                if dp[j]:
+                    dp[i] = True
+                    break
+        
+        return dp[0]
+    
 #     You are given an integer array nums where each element nums[i] indicates your maximum jump length at that position.
 
 # Return true if you can reach the last index starting from index 0, or false otherwise.
