@@ -16,6 +16,19 @@ class Solution:
 
         return dfs(0)
 
+    # O(n^2) time and O(n) space
+    # DP solution bottom-up
+    def jump(self, nums: List[int]) -> int:
+        n = len(nums)
+        dp = [1000000] * n
+        dp[-1] = 0
+
+        for i in range(n - 2, -1, -1):
+            end = min(n, i + nums[i] + 1)
+            for j in range(i + 1, end):
+                dp[i] = min(dp[i], 1 + dp[j])
+        return dp[0]
+
 # You are given an array of integers nums, where nums[i] represents the maximum length of a jump towards the right from index i. For example, if you are at nums[i], you can jump to any index i + j where:
 
 # j <= nums[i]
