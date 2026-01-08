@@ -1,4 +1,5 @@
 class Solution:
+    # DP example
     # O(n!) time and O(n) space
     # Recursive solution
     def jump(self, nums: List[int]) -> int:
